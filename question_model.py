@@ -1,45 +1,3 @@
-# ==============Klasik Soru Tipi - Dogru\Yanlış - Boşluk Doldurma ==================#
-# from quiz_brain import Quiz
-
-
-# class Question2():
-#     question_data_type_1 = [
-#         {"question": "En iyi programlama dili pythondur",   "answer": "True"},]
-
-#     def __init__(self, question, answer):
-#         self.question = question
-#         self.answer = answer
-
-#     def question_ekle(self):
-#         self.question_data_type_1.append(self.question)
-#         self.question_data_type_1.append(self.answer)
-#         print('{} adlı kişi personele eklendi'.format(self.question))
-
-#     def question_listele(self):
-#         print('Personel listesi:')
-#         for kişi in self.question_data_type_1:
-#             print(kişi)
-
-
-# # ==============================Çoktan Seçmeli Soru Tipi ============================#
-# class Question1():
-#     question_data_type_2 = []
-
-#     def __init__(self, question, answer, choice):
-#         self.question = question
-#         self.answer = answer
-#         self.choice = choice
-
-#     def question_ekle(self):
-#         self.question_data_type_2.append(self.question)
-#         self.question_data_type_2.append(self.answer)
-#         self.question_data_type_2.append(self.choice)
-#         print('{} adlı kişi personele eklendi'.format(self.question))
-
-#     def question_listele(self):
-#         print('Personel listesi:')
-#         for kişi in self.question_data_type_2:
-#             print(kişi)
 
 # ==============================Question ================================================================================================================#
 # 
@@ -55,25 +13,6 @@ class Question:
         return self.answer == answer
    
                 
-         
-        
-q1 = Question("Soru1",   "Cevap1", "10", "3")
-q2 = Question("Soru2",   "Cevap2", "10", "3")
-q3 = Question("Soru3",   "Cevap3", "10", "3")
-q4 = Question("Soru3",   "Cevap3", "10", "3")
-q5 = Question("Soru3",   "Cevap3", "10", "3")
-q6 = Question("Soru3",   "Cevap3", "10", "3")
-q7 = Question("Soru3",   "Cevap3", "10", "3")
-q8 = Question("Soru3",   "Cevap3", "10", "3")
-q9 = Question("Soru3",   "Cevap3", "10", "3")
-q10 = Question("Soru3",   "Cevap3", "10", "3")
-
-list_2 = [q1, q2, q3, q4, q5, q6, q7, q7, q8, q9, q10]
-
-
-
-        
-
 class MultiChoice(Question):
     def __init__(self, text, answer, score, level,choice):
         super().__init__(text, answer, score, level)
@@ -81,19 +20,6 @@ class MultiChoice(Question):
 
 # =============== Çoktan Seçmeli Soru Tipleri için===========================================================================#
 
-q1 = MultiChoice("Soru1",   "a", "10", "3", "a- b- c- d-")
-q2 = MultiChoice("Soru2",   "a", "10", "3", "a- b- c- d-")
-q3 = MultiChoice("Soru3",   "a", "10", "3", "a- b- c- d-")
-q4 = MultiChoice("Soru3",   "a", "10", "3", "a- b- c- d-")
-q5 = MultiChoice("Soru3",   "a", "10", "3", "a- b- c- d-")
-q6 = MultiChoice("Soru3",   "a", "10", "3", "a- b- c- d-")
-q7 = MultiChoice("Soru3",   "a", "10", "3", "a- b- c- d-")
-q8 = MultiChoice("Soru3",   "a", "10", "3", "a- b- c- d-")
-q9 = MultiChoice("Soru3",   "a", "10", "3", "a- b- c- d-")
-q10 = MultiChoice("Soru3",   "a", "10", "3", "a- b- c- d-")
-
-
-list_1 = [q1, q2, q3, q4, q5, q6,q7,q8, q9, q10]
 class TrueFalse(Question):
     pass
         
@@ -107,11 +33,12 @@ class GapFilling(Question):
 
 
 
-from data import list_1, list_2
-class Islemler:
+class Transaction:
     
      # -------------------   START FOR ADD  -------------------------------------------------------------------------#
-    def SoruEkle():
+    def Add_Question(self, list_1=None, list_2=None):
+        self.list_1 = list_1
+        self.list_2 = list_2
         question_type = input("Eklemek istediğiniz soru tipini belirtiniz?Sadece numarasını yazınız! 1-Çoktan Seçmeli 2-Klasik 3-Dogru Yanlış 4-Boşluk Doldurma")
         if question_type == "1" or question_type == "2" or question_type == "3" or question_type == "4":
             num = int(input('Kaç adet soru eklemek istiyorsunuz: '))
@@ -147,7 +74,9 @@ class Islemler:
   
 
         
-    def SoruSil(self):
+    def Del_Question(self, list_1=None, list_2=None):
+        self.list_1 = list_1
+        self.list_2 = list_2
         # # ----------------------------------------   START FOR DELETE    -------------------------------------#
         question_type = input("Silmek istediğiniz soru tipini belirtiniz?Sadece numarasını yazınız! 1-Çoktan Seçmeli 2-Klasik 3-Dogru Yanlış 4-Boşluk Doldurma")
         if question_type == "1" or question_type == "2" or question_type == "3" or question_type == "4":
@@ -202,7 +131,9 @@ class Islemler:
         # # ----------------------------------------   START FOR LIST    -------------------------------------#
 
         
-    def SoruListele(self):
+    def List_Question(self, list_1=None, list_2=None):
+        self.list_1 = list_1
+        self.list_2 = list_2
         question_type = input("Silmek istediğiniz soru tipini belirtiniz?Sadece numarasını yazınız! 1-Çoktan Seçmeli 2-Klasik 3-Dogru Yanlış 4-Boşluk Doldurma")
         if question_type == "1" or question_type == "2" or question_type == "3" or question_type == "4":
                 if question_type == "1":
