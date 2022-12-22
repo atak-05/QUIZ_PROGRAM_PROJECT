@@ -9,6 +9,8 @@
 
 from .question_model import Question 
 from .question_model import MultiChoice
+from .question_model import MultiChoice
+from .question_model import Question
 
 
 
