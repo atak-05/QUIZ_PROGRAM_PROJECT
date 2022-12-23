@@ -1,4 +1,5 @@
 
+
 # ==============================Question ================================================================================================================#
 # 
 
@@ -36,36 +37,44 @@ class GapFilling(Question):
 class Transaction:
     
      # -------------------   START FOR ADD  -------------------------------------------------------------------------#
-    def Add_Question(self, list_1=None, list_2=None):
-        self.list_1 = list_1
-        self.list_2 = list_2
+    def Add_Question(self):
+        list_1 = []
+        list_2 = []
         question_type = input("Eklemek istediğiniz soru tipini belirtiniz?Sadece numarasını yazınız! 1-Çoktan Seçmeli 2-Klasik 3-Dogru Yanlış 4-Boşluk Doldurma")
         if question_type == "1" or question_type == "2" or question_type == "3" or question_type == "4":
-            num = int(input('Kaç adet soru eklemek istiyorsunuz: '))
-            i = 0
-            while(i<num):
-                if question_type == "1":
-                    text = input("Soru Textinizi Yazınız!")
-                    answer = input("Cevap Textinizi Yazınız!")
-                    score = input("Lütfen bu soru için puan belirleyiniz!")
-                    level = input("Lütfen bu soru için 1'den 3'e kadar seviye belirleyiniz.Örneğin; 1")
-                    choice = input("Lütfen seçeneklerinizi belirleyin. Örnek olarak; a-Soru Şıkkı b-Soru Şıkkı c-Soru Şıkkı d-Soru Şıkkı")
-                    new = MultiChoice(text,answer,score,level,choice )
-                    list_2.append(new)
-                    i += 1
-                elif question_type == "1" or "2" or "3":
-                    text = input("Soru Textinizi Yazınız!")
-                    answer = input("Cevap Textinizi Yazınız!")
-                    score = input("Lütfen bu soru için puan belirleyiniz!")
-                    level = input("Lütfen bu soru için 1'den 3'e kadar seviye belirleyiniz.Örneğin; 1")
-                    new = Question(text,answer, score,level )
-                    list_1.append(new)
-                    i += 1
-                    
-                print("EklendiYeni!")
-                print("--------------")
+            num =input('Kaç adet soru eklemek istiyorsunuz: ')
+            try:
+                    num = int(num)
+                    i = 0
+                    while(i<num):
+                        if question_type == "1":
+                            text = input("Soru Textinizi Yazınız!")
+                            answer = input("Cevap Textinizi Yazınız!")
+                            score = input("Lütfen bu soru için puan belirleyiniz!")
+                            level = input("Lütfen bu soru için 1'den 3'e kadar seviye belirleyiniz.Örneğin; 1")
+                            choice = input("Lütfen seçeneklerinizi belirleyin. Örnek olarak; a-Soru Şıkkı b-Soru Şıkkı c-Soru Şıkkı d-Soru Şıkkı")
+                            new = MultiChoice(text,answer,score,level,choice )
+                            self.list_1.append(new)
+                            i += 1
+                        elif question_type == "1" or "2" or "3":
+                            text = input("Soru Textinizi Yazınız!")
+                            answer = input("Cevap Textinizi Yazınız!")
+                            score = input("Lütfen bu soru için puan belirleyiniz!")
+                            level = input("Lütfen bu soru için 1'den 3'e kadar seviye belirleyiniz.Örneğin; 1")
+                            new = Question(text,answer, score,level )
+                            self.list_2.append(new)
+                            i += 1
+                                
+                        print("EklendiYeni!")
+                        print("--------------")
+                            
+            except:
+                print("Sayi Yazmalısınız!!")
+                return
+                                 
         else:
             print("Lütfen belirtilen şıklardan birinin numarasını yazınız!")
+               
         
     
 
@@ -74,7 +83,7 @@ class Transaction:
   
 
         
-    def Del_Question(self, list_1=None, list_2=None):
+    def Del_Question(self, list_1= None, list_2=None):
         self.list_1 = list_1
         self.list_2 = list_2
         # # ----------------------------------------   START FOR DELETE    -------------------------------------#
@@ -84,7 +93,7 @@ class Transaction:
                 text = input("Soru Textinizi Yazınız!")
                 aranan=[]
                 x =[]
-                for ogr in list_1:
+                for ogr in self.list_1:
                     for i in ogr.text.split(" "):
                         if i== text: 
                             a = ogr.text
@@ -106,7 +115,7 @@ class Transaction:
                 text = input("Soru Textinizi Yazınız!")
                 aranan=[]
                 x =[]
-                for ogr in list_2:
+                for ogr in self.list_2:
                     for i in ogr.text.split(" "):
                         if i== text: 
                             a = ogr.text
