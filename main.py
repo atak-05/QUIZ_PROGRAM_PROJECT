@@ -81,7 +81,7 @@ elif mychoice =="2":
     islem.Del_Question()
 elif mychoice =="3":
      islem =Transaction()
-     islem.List_Question        
+     islem.List_Question()        
 elif mychoice == "4":
     question_type = input("Quiz için lütfen soru tipi seçiniz?Sadece numarasını yazınız! \n 1-Çoktan Seçmeli \n 2-Klasik \n 3-Karma ")
     if question_type == "1" or question_type == "2" or question_type == "3" or question_type == "4":            
