@@ -207,7 +207,7 @@ class Transaction:
                 x =[]
                 for ogr in list_1:
                     for i in ogr.text.split(" "):
-                        if i== text: 
+                        if i.lower() == text.lower(): 
                             a = ogr.text
                             index = list_1.index(ogr)
                             aranan.append(i)
@@ -253,7 +253,7 @@ class Transaction:
 
         
     def List_Question(self):
-        question_type = input("Silmek istediğiniz soru tipini belirtiniz?Sadece numarasını yazınız! 1-Çoktan Seçmeli 2-Klasik 3-Dogru Yanlış 4-Boşluk Doldurma")
+        question_type = input("Listelemek istediğiniz soru tipini belirtiniz?Sadece numarasını yazınız! 1-Çoktan Seçmeli 2-Klasik 3-Dogru Yanlış 4-Boşluk Doldurma")
         if question_type == "1" or question_type == "2" or question_type == "3" or question_type == "4":
                 if question_type == "1":
                     text = input("Soru Textinizi Yazınız!")
@@ -261,7 +261,7 @@ class Transaction:
                     x =[]
                     for ogr in list_1:
                         for i in ogr.text.split(" "):
-                            if i== text: 
+                            if i.lower()== text.lower(): 
                                 a = ogr.text
                                 index = list_1.index(ogr)
                                 aranan.append(i)
@@ -270,13 +270,6 @@ class Transaction:
 
                     if(len(aranan) == 0):
                             print("Soru bulunamadı!")
-                    elif len(aranan) >= 1:
-                                del_index= int(input("Lütfen silmek istediğiniz sorunun yanındaki soru numarısını yazınız!"))
-                                list_1.pop(del_index)
-                                print(" Sorunuz listeden silindi! ")
-                                print(" {del_index} ".format(del_index=del_index) +" nolu sorunuz listeden silindi! ")
-                                # for ogrenci in aranan:
-                                #     print(str(ogrenci.text))
                 elif question_type ==  "2" or "3"or "4":
                     text = input("Soru Textinizi Yazınız!")
                     aranan=[]
@@ -291,10 +284,6 @@ class Transaction:
                                 print("---------------------------------------------------------------------------------")
                     if(len(aranan) == 0):
                         print("Soru bulunamadı!")
-                    elif len(aranan) >= 1:
-                        del_index= int(input("Lütfen silmek istediğiniz sorunun yanındaki soru numarısını yazınız!"))
-                        list_2.pop(del_index)
-                        print(" {del_index}".format(del_index=del_index) +" Sorunuz listeden silindi! ")
 
         else:
             print("Lütfen belirtilen şıklardan birinin numarasını yazınız!")

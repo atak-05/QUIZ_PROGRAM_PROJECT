@@ -1,4 +1,9 @@
-from quiz_app.Quiz import ClassicQuiz,MixQuiz,MultiChoiceQuiz
+# -------------------------------    NESNE YÖNELİMLİ TASARIM VE ANALİZ PROJE ÖDEVİ    ---------------------------------------#
+# --------------------------------------------    GIZEM TUNCER    -----------------------------------------------------------#
+# --------------------------------------------    Y210240060    -------------------------------------------------------------#
+
+
+
 from quiz_app.question_model import Question ,MultiChoice
 
 
@@ -60,43 +65,64 @@ q10 = Question(
 list_2 = [q1, q2, q3, q4, q5, q6, q7, q7, q8, q9, q10]
 
 
-class brain :
-    def quiz_brain(self):
-        question_type = input("Quiz için lütfen soru tipi seçiniz?Sadece numarasını yazınız! \n 1-Çoktan Seçmeli \n 2-Klasik \n 3-Karma ")
-        if question_type == "1" or question_type == "2" or question_type == "3" or question_type == "4":            
-            if question_type == "1" :
-                user_name = input("Lütfen Ad ve Soyadınızı aralarında boşluk bırakarak yazınız!")
-                quiz = MultiChoiceQuiz(list_1)
-                ths = open("sinav.txt", "w")
-                quiz.open_txt(user_name, ths)
-                aranan = []
-                sum=0
-                quiz.MultiQuiz(list_1,0)
-                print("---------------------------------------------------------------------------------")
-                quiz.close_txt() # txt dosyasının kapatılması için fonksiyon
-            elif question_type == "2":
-                user_name = input("Lütfen Ad ve Soyadınızı aralarında boşluk bırakarak yazınız!")
-                quiz = ClassicQuiz(list_2)
-                ths = open("sinav.txt", "w")
-                quiz.open_txt(user_name, ths)
-                aranan = []
-                sum=0
-                quiz.ClassQuiz(list_2)
-                    
-                print("---------------------------------------------------------------------------------")
-                quiz.close_txt() # txt dosyasının kapatılması için fonksiyon
+       
+from quiz_app.question_model import Transaction
+from quiz_app.question_model import Question
+from quiz_app.Quiz_new import ClassicQuiz,MixQuiz,MultiChoiceQuiz
+
+mychoice = input("""Lütfen yapmak istediğiniz işlemin numarasını yazınız! \n ---------------\n 1-Soru bankasına soru ekleme
+ 2-Soru bankasından soru çıkarma \n 3-Soru bankasındaki soruları listeleme \n 4-Sınav Oluşturma\n ---------------\n 5-Çıkış""")
+
+if mychoice =="1":
+    islem =Transaction()
+    islem.Add_Question()
+elif mychoice =="2":
+    islem =Transaction()
+    islem.Del_Question()
+elif mychoice =="3":
+     islem =Transaction()
+     islem.List_Question()        
+elif mychoice == "4":
+    question_type = input("Quiz için lütfen soru tipi seçiniz?Sadece numarasını yazınız! \n 1-Çoktan Seçmeli \n 2-Klasik \n 3-Karma ")
+    if question_type == "1" or question_type == "2" or question_type == "3" or question_type == "4":            
+        if question_type=="1":
+            user_name = input("Lütfen Ad ve Soyadınızı aralarında boşluk bırakarak yazınız!")
+            quiz = MultiChoiceQuiz(list_1)
+            ths = open("sinav.txt", "w")
+            quiz.open_txt(user_name, ths)
+            aranan = []
+            sum=0
+            quiz.MultiQuiz(list_1,0)
+            print("---------------------------------------------------------------------------------")
+            quiz.close_txt() # txt dosyasının kapatılması için fonksiyon
+        elif question_type == "2":
+            user_name = input("Lütfen Ad ve Soyadınızı aralarında boşluk bırakarak yazınız!")
+            quiz = ClassicQuiz(list_2)
+            ths = open("sinav.txt", "w")
+            quiz.open_txt(user_name, ths)
+            aranan = []
+            sum=0
+            quiz.ClassQuiz(list_2)
                 
-            elif question_type == "3":
-                
-                user_name = input("Lütfen Ad ve Soyadınızı aralarında boşluk bırakarak yazınız!")
-                quiz = MixQuiz(list_1,list_2)
-                ths = open("sinav.txt", "w")
-                quiz.open_txt(user_name, ths)
-                aranan = []
-                sum=0
-                quiz.Mix_Ouiz()
-                print("---------------------------------------------------------------------------------")
-                quiz.close_txt() # txt dosyasının kapatılması için fonksiyon
-    
-            else:
-                print("Lütfen belirtilen seçeneklerden birini giriniz!")
+            print("---------------------------------------------------------------------------------")
+            quiz.close_txt() # txt dosyasının kapatılması için fonksiyon
+            
+        elif question_type == "3":
+            
+            user_name = input("Lütfen Ad ve Soyadınızı aralarında boşluk bırakarak yazınız!")
+            quiz = MixQuiz(list_1,list_2)
+            ths = open("sinav.txt", "w")
+            quiz.open_txt(user_name, ths)
+            aranan = []
+            sum=0
+            quiz.Mix_Ouiz()
+            print("---------------------------------------------------------------------------------")
+            quiz.close_txt() # txt dosyasının kapatılması için fonksiyon
+  
+        else:
+            print("Lütfen belirtilen seçeneklerden birini giriniz!")
+elif mychoice =="5":
+    exit()
+          
+else:
+    print("Lütfen belirtilen seçeneklerden birini giriniz!")
