@@ -39,13 +39,7 @@ class MultiChoiceQuiz(Quiz1):
             print ("Seçtiğiniz Seviye : Zor ")
         else: 
             print ("Lütfen belirtilen şıklardan birini seçiniz!")
-    # def sort (self,nums):
-    #     for i in range(0,len(nums)):
-    #         for j in range(0,len(nums)-1):
-    #             if nums[j]> nums[j+1]:
-    #                 nums[j] , nums[j+1] = nums[j+1], nums[j]
-    #             else:
-    #                 continue
+
     def sort_question(self,aranan):
         self.aranan =aranan
         for a in self.aranan:
@@ -56,6 +50,7 @@ class MultiChoiceQuiz(Quiz1):
             q_level = a.level
             print(f"Seviye : {q_level}")
         print(f'\n{"-" * 16}\n')
+        
     def append(self,q_list,aranan_list,aranan_1,aranan_2,aranan_3):
         self.q_list=q_list
         for ogr in self.q_list:
@@ -69,6 +64,7 @@ class MultiChoiceQuiz(Quiz1):
         print(f'\n{"-"*50}\n')  
         aranan_list= [aranan_1,aranan_2,aranan_3]
         return aranan_list         
+    
     def check_answer(self,aranan_list,ths):
         sum=0
         index = 0
@@ -96,6 +92,9 @@ class MultiChoiceQuiz(Quiz1):
         print(f"Sınav Sonucunuz : {sum}/100.\n".format(sum=sum))
         ths.write("\n****************" +f" Sınav Sonucunuz : {sum}/100.".format(sum=sum)+"*************************\n")
         self.close_txt()
+        
+        
+        
     def MultiQuiz(self,q_list):
         self.q_list = q_list
         q= Quiz1()
@@ -116,52 +115,6 @@ class MultiChoiceQuiz(Quiz1):
         
         
        
-                    
-                # if q_level == int(i): 
-                #         index = index + 1
-                #         aranan.append(ogr)
-                #         user_answer = input("Soru {index}: ".format(
-                #             index=index) + "{q_text}".format(q_text=q_text) + " {q_choice}".format(q_choice=q_choice))
-                #         print("\n")
-                #         if user_answer.lower() == q_answer.lower():
-                #             sum = sum + int(q_score)
-                #             print("Cevabınız Doğru")
-                #         else:
-                #             sum = sum + 0
-                #             print("Cevaınız Yanlış! Doğru Cevap : {q_answer}".format(q_answer=q_answer))
-                    
-        #             ths.write("Soru {index}: ".format(index=index) + "{q_text}".format(q_text=q_text) + "\n"+" {q_choice}".format(q_choice=q_choice) +
-        #                     "\n" " Doğru cevap: {q_answer}".format(q_answer=q_answer)+" Kullanıcı Cevabı : {user_answer} ".format(user_answer=user_answer))
-        #             ths.write("\n")
-                    
-        #             print("---------------------------------------------------------------------------------")
-                    
-            
-                    
-            
-        print(f"Sınav Sonucunuz : {sum}/100.\n".format(sum=sum))
-        ths.write("\n****************" +f" Sınav Sonucunuz : {sum}/100.".format(sum=sum)+"*************************\n")
-        self.close_txt()
-        
-        
-        def quiz_list(self,q_list,sum):
-            self.q_list = q_list
-            index = index + 1
-            aranan.append(ogr)
-            user_answer = input("Soru {index}: ".format(index=index) + "{q_text}".format(q_text=q_text) + " {q_choice}".format(q_choice=q_choice))
-            print("\n")
-            if user_answer.lower() == q_answer.lower():
-                sum = sum + int(q_score)
-                print("Cevabınız Doğru")
-            else:
-                sum = sum + 0
-                print("Cevaınız Yanlış! Doğru Cevap : {q_answer}".format(q_answer=q_answer))
-                
-            ths.write("Soru {index}: ".format(index=index) + "{q_text}".format(q_text=q_text) + "\n"+" {q_choice}".format(q_choice=q_choice) +
-                        "\n" " Doğru cevap: {q_answer}".format(q_answer=q_answer)+" Kullanıcı Cevabı : {user_answer} ".format(user_answer=user_answer))
-            ths.write("\n")
-            
-        
         
 class ClassicQuiz(Quiz1):
     def __init__(self,q_list):
