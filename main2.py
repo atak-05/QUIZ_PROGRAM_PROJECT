@@ -73,14 +73,13 @@ from quiz_app.Quiz_new import ClassicQuiz,MixQuiz,MultiChoiceQuiz
 mychoice = input("""Lütfen yapmak istediğiniz işlemin numarasını yazınız! \n ---------------\n 1-Soru bankasına soru ekleme
  2-Soru bankasından soru çıkarma \n 3-Soru bankasındaki soruları listeleme \n 4-Sınav Oluşturma\n ---------------\n 5-Çıkış""")
 
+islem =Transaction()
+
 if mychoice =="1":
-    islem =Transaction()
     islem.Add_Question()
 elif mychoice =="2":
-    islem =Transaction()
     islem.Del_Question()
 elif mychoice =="3":
-     islem =Transaction()
      islem.List_Question()        
 elif mychoice == "4":
     question_type = input("Quiz için lütfen soru tipi seçiniz?Sadece numarasını yazınız! \n 1-Çoktan Seçmeli \n 2-Klasik \n 3-Karma ")
@@ -92,7 +91,7 @@ elif mychoice == "4":
             quiz.open_txt(user_name, ths)
             aranan = []
             sum=0
-            quiz.MultiQuiz(list_1,0)
+            quiz.MultiQuiz(list_1)
             print("---------------------------------------------------------------------------------")
             quiz.close_txt() # txt dosyasının kapatılması için fonksiyon
         elif question_type == "2":
