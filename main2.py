@@ -68,7 +68,7 @@ list_2 = [q1, q2, q3, q4, q5, q6, q7, q7, q8, q9, q10]
        
 from quiz_app.question_model import Transaction
 from quiz_app.question_model import Question
-from quiz_app.Quiz_new import ClassicQuiz,MixQuiz,MultiChoiceQuiz
+from quiz_app.Quiz_new import ClassicQuiz1,MixQuiz1,MultiChoiceQuiz
 
 mychoice = input("""Lütfen yapmak istediğiniz işlemin numarasını yazınız! \n ---------------\n 1-Soru bankasına soru ekleme
  2-Soru bankasından soru çıkarma \n 3-Soru bankasındaki soruları listeleme \n 4-Sınav Oluşturma\n ---------------\n 5-Çıkış""")
@@ -85,37 +85,36 @@ elif mychoice == "4":
     question_type = input("Quiz için lütfen soru tipi seçiniz?Sadece numarasını yazınız! \n 1-Çoktan Seçmeli \n 2-Klasik \n 3-Karma ")
     if question_type == "1" or question_type == "2" or question_type == "3" or question_type == "4":            
         if question_type=="1":
-            user_name = input("Lütfen Ad ve Soyadınızı aralarında boşluk bırakarak yazınız!")
+            # user_name1= input("Lütfen Ad ve Soyadınızı aralarında boşluk bırakarak yazınız!")
             quiz = MultiChoiceQuiz(list_1)
-            ths = open("sinav.txt", "w")
-            quiz.open_txt(user_name, ths)
-            aranan = []
-            sum=0
+            # ths = open("sinav.txt", "w")
+            # quiz.open_txt(user_name, ths)
+            # aranan = []
+            # sum=0
             quiz.MultiQuiz(list_1)
-            print("---------------------------------------------------------------------------------")
+            print(f'\n{"*" * 80}')
             quiz.close_txt() # txt dosyasının kapatılması için fonksiyon
         elif question_type == "2":
-            user_name = input("Lütfen Ad ve Soyadınızı aralarında boşluk bırakarak yazınız!")
-            quiz = ClassicQuiz(list_2)
-            ths = open("sinav.txt", "w")
-            quiz.open_txt(user_name, ths)
-            aranan = []
-            sum=0
-            quiz.ClassQuiz(list_2)
-                
-            print("---------------------------------------------------------------------------------")
+            # user_name = input("Lütfen Ad ve Soyadınızı aralarında boşluk bırakarak yazınız!")
+            quiz = ClassicQuiz1(list_2)
+            # ths = open("sinav.txt", "w")
+            # quiz.open_txt(user_name, ths)
+            # aranan = []
+            # sum=0
+            quiz.ClassQuiz(list_2) 
+            print(f'\n{"*" * 80}')
             quiz.close_txt() # txt dosyasının kapatılması için fonksiyon
             
         elif question_type == "3":
-            
+            quiz=MixQuiz1(list_1, list_2)
             user_name = input("Lütfen Ad ve Soyadınızı aralarında boşluk bırakarak yazınız!")
-            quiz = MixQuiz(list_1,list_2)
+            quiz.mix_quiz()
             ths = open("sinav.txt", "w")
             quiz.open_txt(user_name, ths)
             aranan = []
             sum=0
             quiz.Mix_Ouiz()
-            print("---------------------------------------------------------------------------------")
+            print(f'\n{"*" * 80}')
             quiz.close_txt() # txt dosyasının kapatılması için fonksiyon
   
         else:

@@ -1,0 +1,45 @@
+Kullanýcý Adý ve Soyadý: ss
+--
+ru 1: Bilgisayarýn elle tutulabilen ve gözle görülebilen kýsýmlarýna ne ad verilir?
+ a-Donaným b-Sistem Yazýlýmý c-Uygulama Yazýlýmý d-Donatým
+ Doðru cevap: a Kullanýcý Cevabý : s 
+Soru 2: Bilgisayardaki tüm iþlemlerin yapýldýðý dahili donaným birimi hangisidir?
+ a- Anakart b-Ram c-Ýþlemci d-Sabit Disk
+ Doðru cevap: c Kullanýcý Cevabý :  
+Soru 3: Aþaðýdaki uygulama yazýlýmlarýndan hangisi yanlýþ eþleþtirilmiþtir?
+ a-Eset Nod 32 - Antivirüs Yazýlýmý b-Mozilla Firefox - Ýnternet Tarayýcýsý c-Paint - Resim Programý d-Microsoft Word - Sunum Programý
+ Doðru cevap: d Kullanýcý Cevabý : ss 
+Soru 4: Ýnternete baðlanmamýzý saðlayan donaným birimi aþaðýdakilerden hangisidir?
+ a-Modem b-Anakart c-Ýþlemci d-Ses Kartý
+ Doðru cevap: a Kullanýcý Cevabý : s 
+Soru 5: Ýnternet üzerinden görüntülü konuþma amacýyla kullanýlan bilgisayar donanýmý aþaðýdakilerden hangisidir?
+ a-Tarayýcý b-Web Kamerasý c-Yazýcý d-Ekran
+ Doðru cevap: b Kullanýcý Cevabý : s 
+Soru 6: Aþaðýdaki yazýlýmlardan hangisi sistem yazýlýmýdýr?
+ a- Google Chrome b-Paint c-Avira Antivirüs d-Windows8
+ Doðru cevap: d Kullanýcý Cevabý : s 
+Soru 7: Aþaðýdakilerden hangisi dahili donaným birimidir?
+ a-Kasa b-Anakart c-Ekran d-Tarayýcý
+ Doðru cevap: b Kullanýcý Cevabý : s 
+Soru 8: Müzik dinlemek için kullandýðýmýz uygulama yazýlýmý aþaðýdakilerden hangisidir?
+ a-Paint b-Microsoft Powerpaint c-Avira d-Winamp
+ Doðru cevap: d Kullanýcý Cevabý : s 
+Soru 9: Aþaðýdakilerden hangisi bir sistem yazýlýmýdýr?
+ a-Google Chrome b-Ýnternet Explorer c-Windows XP d-Adobe Photoshop
+ Doðru cevap: c Kullanýcý Cevabý : s 
+Soru 10: Bilgisayarýn çalýþma hýzýný belirleyen donaným birimleri hangileridir? I. Anakart II. Ram III. Ýþlemci IV. Güç Kaynaðý
+ a-I-II b-I-III c-II-III d-III-IV
+ Doðru cevap: c Kullanýcý Cevabý : s 
+Soru  1 : 2 GB kaç 2048 MB eder. Lütfen doðru veya yanlýþ yazýnýz? "/n" Doðru Cevap: 5 "/n" Kullanýcý Cevap: ss
+Soru  2 : Kýzdýrma Virüsleri bir virüs türüdür. Lütfen doðru veya yanlýþ yazýnýz? "/n" Doðru Cevap: 5 "/n" Kullanýcý Cevap: 
+Soru  3 : 2-Yazýlým nedir? "/n" Doðru Cevap: 10 "/n" Kullanýcý Cevap: s
+Soru  4 :  ………………… bilgisayardaki tüm donaným elemanlarý arasýndaki iletiþimi saðlar, bazý donaným elemanlarý ..................üzerinde yer alýr; bazý donaným elemanlarý ise...................... kablolarla baðlýdýr.
+              Ýfadesinde noktalý olan yerlere aþaðýdakilerden hangisi gelmelidir? "/n" Doðru Cevap: 10 "/n" Kullanýcý Cevap: s
+Soru  5 : Tarayýcýnýn iþlevi nedir? "/n" Doðru Cevap: 10 "/n" Kullanýcý Cevap: s
+Soru  6 : Bilgisayardaki tüm bilgilerimizin kalýcý olarak depolandýðý donaným birimi hangisidir? "/n" Doðru Cevap: 20 "/n" Kullanýcý Cevap: s
+Soru  7 : Derleme nedir "/n" Doðru Cevap: 20 "/n" Kullanýcý Cevap: s
+Soru  8 : Geniþ alan aðý (WAN) nedir? "/n" Doðru Cevap: 10 "/n" Kullanýcý Cevap: s
+Soru  9 : Python bir programlama dilidir. Lütfen doðru veya yanlýþ yazýnýz? "/n" Doðru Cevap: 10 "/n" Kullanýcý Cevap: s
+Soru  10 : Python bir programlama dilidir. Lütfen doðru veya yanlýþ yazýnýz? "/n" Doðru Cevap: 10 "/n" Kullanýcý Cevap: s
+Soru  11 : Veri iletmek ve bilgisayar kaynaklarýný ortak kullanmak amacýyla birden fazla bilgisayarýn birbirine baðlanmasýna ……………………. denir.Ýfadesinde noktalý olan yerlere aþaðýdakilerden hangisi gelmelidir? "/n" Doðru Cevap: 10 "/n" Kullanýcý Cevap: 
+**************** Sýnav Sonucu daha açýklanamadý!*************************
