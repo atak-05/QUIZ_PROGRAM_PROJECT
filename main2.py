@@ -107,13 +107,12 @@ elif mychoice == "4":
             
         elif question_type == "3":
             quiz=MixQuiz1(list_1, list_2)
-            user_name = input("Lütfen Ad ve Soyadınızı aralarında boşluk bırakarak yazınız!")
+            #user_name = input("Lütfen Ad ve Soyadınızı aralarında boşluk bırakarak yazınız!")
             quiz.mix_quiz()
-            ths = open("sinav.txt", "w")
-            quiz.open_txt(user_name, ths)
-            aranan = []
-            sum=0
-            quiz.Mix_Ouiz()
+            # ths = open("sinav.txt", "w")
+            # quiz.open_txt(user_name, ths)
+            # aranan = []
+            # sum=0
             print(f'\n{"*" * 80}')
             quiz.close_txt() # txt dosyasının kapatılması için fonksiyon
   

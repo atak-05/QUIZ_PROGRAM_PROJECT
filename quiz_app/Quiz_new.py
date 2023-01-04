@@ -118,7 +118,7 @@ class MultiChoiceQuiz(Quiz1):
         aranan_1=[]
         aranan_2=[]
         aranan_3=[]
-        aranan_list =[aranan_1,aranan_2,aranan_3]
+        aranan_list = [aranan_1,aranan_2,aranan_3]
         
         self.append(q_list,aranan_list,aranan_1,aranan_2,aranan_3)
         for i in aranan_list:
@@ -244,8 +244,8 @@ class MixQuiz1(Quiz1):
             q_answer = a.answer
             q_score=a.score
             q_level = a.level
-            print(f"Seviye : {q_level}")
-        print(f'\n{"-" * 16}\n')
+        #     print(f"Seviye : {q_level}")
+        # print(f'\n{"-" * 16}\n')
         
     def sort_question_is_multi(self,aranan):
         self.aranan =aranan
@@ -255,8 +255,8 @@ class MixQuiz1(Quiz1):
             q_answer = a.answer
             q_score=a.score
             q_level = a.level
-            print(f"Seviye : {q_level}")
-        print(f'\n{"-" * 16}\n')
+            # print(f"Seviye : {q_level}")
+        # print(f'\n{"-" * 16}\n')
         
     def append(self,q_list,aranan_list,aranan_1,aranan_2,aranan_3):
         self.q_list=q_list
@@ -272,16 +272,16 @@ class MixQuiz1(Quiz1):
         aranan_list= [aranan_1,aranan_2,aranan_3]
         return aranan_list      
 
-    def check_answer_is_classic(self,aranan_list,ths):
+    def check_answer_is_classic(self,aranan_list,ths,index):
         sum=0
-        index = 0
+        self.index=index
         self.ths=ths
         for i in aranan_list:
             for j in i:
                 q_answer = j.answer
                 q_score = j.score
                 q_text =j.text
-                index= index+1
+                index = index + 1
                 user_answer = input("Soru {index}: ".format(index=index) + "{q_text}".format(q_text=q_text))
                 # if user_answer.lower() == q_answer.lower():
                 #     # sum = sum + int(q_score)
@@ -292,22 +292,22 @@ class MixQuiz1(Quiz1):
                 ths.write(f'Soru  {index} : {q_text} "/n" Doğru Cevap: {q_score} "/n" Kullanıcı Cevap: {user_answer}')  
                 # self.ths.write("Soru {index}: ".format(index=index) + "{q_text}".format(q_text=q_text) +"\n" " Doğru cevap: {q_answer}".format(q_answer=q_answer)+" Kullanıcı Cevabı : {user_answer} ".format(user_answer=user_answer)")
                 ths.write("\n")
-                    
                 print("---------------------------------------------------------------------------------")
+
         # print(f'Sınav sonucunuz en kısa zamanda bildirilecektir.')
         # ths.write(f'\n{"*" * 16}\nSınav sonucunuz en kısa zamanda bildirilecektir!.\n{"*" * 16}\n')
         # self.close_txt()
 
-    def check_answer_is_multi(self,aranan_list,ths):
+    def check_answer_is_multi(self,aranan_list,ths,index):
         sum=0
-        index = 0
+        self.index = index 
         for i in aranan_list:
             for j in i:
                 q_answer = j.answer
                 q_score = j.score
                 q_choice = j.choice
                 q_text =j.text
-                index= index+1
+                index = index + 1
                 user_answer = input("Soru {index}: ".format(index=index) + "{q_text}".format(q_text=q_text) + " {q_choice}".format(q_choice=q_choice))
                 print("\n")
                 if user_answer.lower() == q_answer.lower():
@@ -315,7 +315,7 @@ class MixQuiz1(Quiz1):
                     print("Cevabınız Doğru")
                 else:
                     sum = sum + 0
-                    print("Cevaınız Yanlış! Doğru Cevap : {q_answer}".format(q_answer=q_answer))
+                    print("Cevabınız Yanlış! Doğru Cevap : {q_answer}".format(q_answer=q_answer))
                     
                     ths.write("Soru {index}: ".format(index=index) + "{q_text}".format(q_text=q_text) + "\n"+" {q_choice}".format(q_choice=q_choice) +
                             "\n" " Doğru cevap: {q_answer}".format(q_answer=q_answer)+" Kullanıcı Cevabı : {user_answer} ".format(user_answer=user_answer))
@@ -330,27 +330,27 @@ class MixQuiz1(Quiz1):
         list_2 = self.list_2
         user_name =  input("Lütfen Ad ve Soyadınızı aralarında boşluk bırakarak yazınız!")
         q= Quiz1()
-        ths = open("sinav.txt", "w")
+        ths = open("data/sinav.txt", "w")
         self.open_txt(user_name,ths)
         sum = 0
-        index =0
         aranan_1=[]
         aranan_2=[]
         aranan_3=[]
-        aranan_list_is_multi =[aranan_1,aranan_2,aranan_3]
+        aranan_list_is_multi = [aranan_1,aranan_2,aranan_3]
         aranan_4=[]
         aranan_5=[]
         aranan_6=[]
-        aranan_list_is_classic =[aranan_4,aranan_5,aranan_6]
+        aranan_list_is_classic = [aranan_4,aranan_5,aranan_6]
         self.append(list_1,aranan_list_is_multi,aranan_1,aranan_2,aranan_3)
         self.append(list_2,aranan_list_is_classic,aranan_4,aranan_5,aranan_6)
-
+        index= 0
         for i in aranan_list_is_multi:
             self.sort_question_is_multi(i)
-        self.check_answer_is_multi(aranan_list_is_multi,ths)
-        for i in aranan_list_is_multi:
-            self.sort_question_is_multi(i)
-        self.check_answer_is_classic(aranan_list_is_classic,ths)
+        self.check_answer_is_multi(aranan_list_is_multi,ths,index)
+        print(index)
+        for j in aranan_list_is_classic:
+            self.sort_question_is_classic(j)
+        self.check_answer_is_classic(aranan_list_is_classic,ths,index)
    
         print(f"Sınavınız Bitti!")
         ths.write("****************" +f" Sınav Sonucu daha açıklanamadı!"+"*************************")
@@ -369,9 +369,10 @@ class MixQuiz(Quiz1):
         aranan=[]
         x=[]
     def Mix_Ouiz(self):
+        user_name = input("Lütfen Ad ve Soyadınızı aralarında boşluk bırakarak yazınız!")
         q= Quiz1()
         ths = open("yeni.txt", "w")
-        self.open_txt(self.user_name,ths)
+        self.open_txt(user_name,ths)
         sum = 0
         index =0
         aranan=[]
