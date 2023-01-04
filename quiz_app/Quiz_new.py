@@ -1,6 +1,4 @@
-# -------------------------------    NESNE YÖNELİMLİ TASARIM VE ANALİZ PROJE ÖDEVİ    ---------------------------------------#
-# --------------------------------------------    GIZEM TUNCER    -----------------------------------------------------------#
-# --------------------------------------------    Y210240060    -------------------------------------------------------------#
+
 
 
 
@@ -361,61 +359,61 @@ class MixQuiz1(Quiz1):
         
             
     
-class MixQuiz(Quiz1):
-    def __init__(self,q_list1,q_list2):
-        self.q_list1 = q_list1
-        self.q_list2 = q_list2
-        sum = 0
-        aranan=[]
-        x=[]
-    def Mix_Ouiz(self):
-        user_name = input("Lütfen Ad ve Soyadınızı aralarında boşluk bırakarak yazınız!")
-        q= Quiz1()
-        ths = open("yeni.txt", "w")
-        self.open_txt(user_name,ths)
-        sum = 0
-        index =0
-        aranan=[]
-        for ogr in self.q_list1:
-            q_text = ogr.text
-            q_choice = ogr.choice
-            q_answer = ogr.answer
-            q_score=ogr.score
-            q_level = ogr.level
-            index = index + 1
-            aranan.append(ogr)
-            user_answer = input("Soru {index}: ".format(
-                index=index) + "{q_text}".format(q_text=q_text) + " {q_choice}".format(q_choice=q_choice))
-            print("\n")
-            if user_answer.lower() == q_answer.lower():
-                sum = sum + int(q_score)
-                print("Cevabınız Doğru")
-            else:
-                sum = sum + 0
-                print("Cevaınız Yanlış! Doğru Cevap : {q_answer}".format(q_answer=q_answer))
+# class MixQuiz(Quiz1):
+#     def __init__(self,q_list1,q_list2):
+#         self.q_list1 = q_list1
+#         self.q_list2 = q_list2
+#         sum = 0
+#         aranan=[]
+#         x=[]
+#     def Mix_Ouiz(self):
+#         user_name = input("Lütfen Ad ve Soyadınızı aralarında boşluk bırakarak yazınız!")
+#         q= Quiz1()
+#         ths = open("yeni.txt", "w")
+#         self.open_txt(user_name,ths)
+#         sum = 0
+#         index =0
+#         aranan=[]
+#         for ogr in self.q_list1:
+#             q_text = ogr.text
+#             q_choice = ogr.choice
+#             q_answer = ogr.answer
+#             q_score=ogr.score
+#             q_level = ogr.level
+#             index = index + 1
+#             aranan.append(ogr)
+#             user_answer = input("Soru {index}: ".format(
+#                 index=index) + "{q_text}".format(q_text=q_text) + " {q_choice}".format(q_choice=q_choice))
+#             print("\n")
+#             if user_answer.lower() == q_answer.lower():
+#                 sum = sum + int(q_score)
+#                 print("Cevabınız Doğru")
+#             else:
+#                 sum = sum + 0
+#                 print("Cevaınız Yanlış! Doğru Cevap : {q_answer}".format(q_answer=q_answer))
             
-            ths.write("Soru {index}: ".format(index=index) + "{q_text}".format(q_text=q_text) + "\n"+" {q_choice}".format(q_choice=q_choice) +
-                      "\n" " Doğru cevap: {q_answer}".format(q_answer=q_answer)+" Kullanıcı Cevabı : {user_answer} ".format(user_answer=user_answer))
-            ths.write("\n")
-            print("---------------------------------------------------------------------------------")
-        for ogr in self.q_list2:
-            q_text = ogr.text
-            q_answer = ogr.answer
-            #q_score=ogr.score
-            #q_level = ogr.level
-            index = index + 1
-            aranan.append(ogr)
-            user_answer = input("Soru {index}: ".format(index=index) + "{q_text}".format(q_text=q_text))
-            ths.write("Soru {index}: ".format(index=index) + "{q_text}".format(q_text=q_text) + "\n" +" Doğru cevap: {q_answer}".format(q_answer=q_answer)+
-                      " Kullanıcı Cevabı : {user_answer} ".format(user_answer=user_answer))
-            ths.write("\n")
-            print("\n")
+#             ths.write("Soru {index}: ".format(index=index) + "{q_text}".format(q_text=q_text) + "\n"+" {q_choice}".format(q_choice=q_choice) +
+#                       "\n" " Doğru cevap: {q_answer}".format(q_answer=q_answer)+" Kullanıcı Cevabı : {user_answer} ".format(user_answer=user_answer))
+#             ths.write("\n")
+#             print("---------------------------------------------------------------------------------")
+#         for ogr in self.q_list2:
+#             q_text = ogr.text
+#             q_answer = ogr.answer
+#             #q_score=ogr.score
+#             #q_level = ogr.level
+#             index = index + 1
+#             aranan.append(ogr)
+#             user_answer = input("Soru {index}: ".format(index=index) + "{q_text}".format(q_text=q_text))
+#             ths.write("Soru {index}: ".format(index=index) + "{q_text}".format(q_text=q_text) + "\n" +" Doğru cevap: {q_answer}".format(q_answer=q_answer)+
+#                       " Kullanıcı Cevabı : {user_answer} ".format(user_answer=user_answer))
+#             ths.write("\n")
+#             print("\n")
             
-            print("---------------------------------------------------------------------------------")
+#             print("---------------------------------------------------------------------------------")
         
-        print(f"Sınavınız Bitti!")
-        ths.write("****************" +f" Sınav Sonucu daha açıklanamadı!"+"*************************")
-        self.close_txt()  
+#         print(f"Sınavınız Bitti!")
+#         ths.write("****************" +f" Sınav Sonucu daha açıklanamadı!"+"*************************")
+#         self.close_txt()  
        
             
         
